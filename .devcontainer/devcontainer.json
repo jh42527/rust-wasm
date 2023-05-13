@@ -1,5 +1,5 @@
 {
-  "name": "Rust WASM",
+  "name": "C++ / Rust WASM",
   "image": "mcr.microsoft.com/devcontainers/base",
   "features": {
     "devwasm.azurecr.io/dev-wasm/dev-wasm-feature/wasmtime-wasi:0.0.4": {
@@ -11,7 +11,8 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "ms-vscode.cpptools"
+        "ms-vscode.cpptools",
+        "ms-vscode.cpptools-extension-pack"
       ]
     }
   },
