@@ -1,19 +1,15 @@
 # WASM Playground
 
-## C++
-
-
-## Rust
+## Hello World
 
 `cd rust/hello-world`
-
-### Run
-
-cargo wasi run
-
-### Debug
-
 
 ### Build
 
 cargo wasi build --release
+
+### Run
+
+Debug - cargo wasi run
+
+Release - wasmtime run /target/wasm32-wasi/release/hello-world.wasm --allow-precompiled

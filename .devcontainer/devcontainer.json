@@ -6,13 +6,15 @@
       "Version": 17
     },
     "ghcr.io/devcontainers/features/rust": {},
+    "ghcr.io/devcontainers/features/node": {},
     "devwasm.azurecr.io/dev-wasm/dev-wasm-feature/rust-wasi:0": {}
   },
   "customizations": {
     "vscode": {
       "extensions": [
         "ms-vscode.cpptools",
-        "ms-vscode.cpptools-extension-pack"
+        "Vue.volar", 
+        "Vue.vscode-typescript-vue-plugin"
       ]
     }
   },
