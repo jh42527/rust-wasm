@@ -6,17 +6,15 @@
       "Version": 17
     },
     "ghcr.io/devcontainers/features/rust": {},
-    "ghcr.io/devcontainers/features/node": {},
     "devwasm.azurecr.io/dev-wasm/dev-wasm-feature/rust-wasi:0": {}
   },
   "customizations": {
     "vscode": {
       "extensions": [
-        "ms-vscode.cpptools",
-        "Vue.volar", 
-        "Vue.vscode-typescript-vue-plugin"
+        "ms-vscode.cpptools"
       ]
     }
   },
-  "postCreateCommand": "rustup target add wasm32-wasi && cargo install cargo-wasi"
+  "postCreateCommand": "rustup target add wasm32-wasi && cargo install cargo-wasi && cargo install wasm-pack",
+  "runArgs": ["--platform=linux/amd64" ]
 }

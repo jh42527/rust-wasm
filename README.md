@@ -2,14 +2,16 @@
 
 ## Hello World
 
-`cd rust/hello-world`
+`cd hello-world`
 
 ### Build
 
-cargo wasi build --release
+Emscripten (Web) -> `wasm-pack build --target web`
+Wasi (External) -> `cargo wasi build --release`
 
 ### Run
 
 Debug - cargo wasi run
 
-Release - wasmtime run /target/wasm32-wasi/release/hello-world.wasm --allow-precompiled
+Web (CLI) - Chrome Index.html
+Wasi - wasmtime run wasm/target/wasm32-wasi/release/hello-world.wasm --allow-precompiled
