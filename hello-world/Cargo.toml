@@ -8,9 +8,6 @@ edition = "2021"
 crate-type = ["cdylib"]
 
 [dependencies]
-wasm-bindgen = "*"
 
 [package.metadata]
 wasm-opt = false
-
-

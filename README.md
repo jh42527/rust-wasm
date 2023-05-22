@@ -1,4 +1,4 @@
-# WASM Playground
+# WASI Playground
 
 ## Hello World
 
@@ -6,12 +6,12 @@
 
 ### Build
 
-Emscripten (Web) -> `wasm-pack build --target web`
-Wasi (External) -> `cargo wasi build --release`
+`cargo wasi build --release`
+
+### Debug 
+
+`cargo wasi run`
 
 ### Run
 
-Debug - cargo wasi run
-
-Web (CLI) - Chrome Index.html
-Wasi - wasmtime run wasm/target/wasm32-wasi/release/hello-world.wasm --allow-precompiled
+`wasmtime --invoke print_hello target/wasm32-wasi/release/hello_world.wasm --allow-precompiled`
