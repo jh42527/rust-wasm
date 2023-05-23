@@ -1,12 +1,7 @@
 {
   "name": "C++ / Rust WASM",
-  "image": "mcr.microsoft.com/devcontainers/base",
-  "features": {
-    "devwasm.azurecr.io/dev-wasm/dev-wasm-feature/wasmtime-wasi:0.0.4": {
-      "Version": 17
-    },
-    "ghcr.io/devcontainers/features/rust": {},
-    "devwasm.azurecr.io/dev-wasm/dev-wasm-feature/rust-wasi:0": {}
+  "build": {
+    "dockerfile": "Dockerfile"
   },
   "customizations": {
     "vscode": {
@@ -15,6 +10,5 @@
       ]
     }
   },
-  "postCreateCommand": "rustup target add wasm32-wasi && cargo install cargo-wasi && cargo install wasm-pack",
   "runArgs": ["--platform=linux/amd64" ]
 }
