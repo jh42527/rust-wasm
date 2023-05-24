@@ -10,5 +10,6 @@
       ]
     }
   },
-  "runArgs": ["--platform=linux/amd64" ]
+  "runArgs": ["--platform=linux/amd64" ],
+  "remoteUser": "root"
 }
