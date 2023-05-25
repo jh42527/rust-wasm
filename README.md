@@ -6,7 +6,7 @@
 
 ### Build
 
-`cargo wasi build --release`
+Wasi - `cargo wasi build --release`
 
 ### Debug 
 

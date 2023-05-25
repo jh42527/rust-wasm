@@ -1,5 +1,5 @@
 {
-  "name": "C++ / Rust WASM",
+  "name": "Rust WASM",
   "build": {
     "dockerfile": "Dockerfile"
   },
