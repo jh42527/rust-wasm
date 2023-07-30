@@ -2,7 +2,8 @@
 [package]
 name = "fibonacci"
 version = "0.1.0"
-edition = "2018"
+authors = ["Jon Hammond <jon.hammond@outlook.com>"]
+edition = "2021"
 
 [lib]
 crate-type = ["cdylib"]
