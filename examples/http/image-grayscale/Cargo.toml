@@ -1,7 +1,7 @@
 [package]
 name = "image-http-grayscale"
 version = "0.1.0"
-authors = ["yukang <moorekang@gmail.com>", "Michael Yuan <michael@secondstate.io>"]
+authors = ["Jon Hammond <jon.hammond@outlook.com>"]
 edition = "2021"
 
 [dependencies]
