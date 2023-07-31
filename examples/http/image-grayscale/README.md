@@ -1,5 +1,7 @@
 # Image Grayscale API
 
+## Local
+
 ### Build
 
 `cargo wasi build --release`
@@ -12,7 +14,9 @@
 
 `wasmedge target/wasm32-wasi/release/image-http-grayscale.wasm`
 
-### Build OCI Container
+## Container 
+
+### Build Image
 
 `docker buildx build --platform wasi/wasm -t rustwasm/image-http-grayscale .`
 
