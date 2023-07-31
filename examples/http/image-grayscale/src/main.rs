@@ -19,7 +19,7 @@ async fn grayscale(req: Request<Body>) -> Result<Response<Body>, anyhow::Error> 
         ))),
 
         (&Method::POST, "/grayscale") => {
-            println!("process grayscale ...");
+            println!("Begin process grayscale ...");
 
             let image_data = hyper::body::to_bytes(req.into_body()).await?;
             
@@ -44,6 +44,8 @@ async fn grayscale(req: Request<Body>) -> Result<Response<Body>, anyhow::Error> 
                 .header("Content-Type", "image/png")
                 .body(Body::from(encoded_img))
                 .unwrap();
+
+            println!("Completed");
             
             Ok(response)
         }
@@ -59,7 +61,9 @@ async fn grayscale(req: Request<Body>) -> Result<Response<Body>, anyhow::Error> 
 
 #[tokio::main(flavor = "current_thread")]
 async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
-    let addr = SocketAddr::from(([0, 0, 0, 0], 9005));
+    println!("Application Started");
+
+    let addr = SocketAddr::from(([0, 0, 0, 0], 8080));
     let make_svc = make_service_fn(|_| {
         async move {
             Ok::<_, Infallible>(service_fn(move |req| {
