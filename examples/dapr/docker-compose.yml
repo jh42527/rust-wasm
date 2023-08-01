@@ -4,7 +4,10 @@ services:
   # WASM/WASI app + Dapr sidecar
   ##############################
   grayscale-app:
-    image: rustwasm/image-http-grayscale:latest
+    image: rustwasm/image-http-grayscale
+    build:
+      context: image-grayscale
+      dockerfile: image-grayscale/Dockerfile
     platform: wasi/wasm
     runtime: io.containerd.wasmedge.v1
     ports:
