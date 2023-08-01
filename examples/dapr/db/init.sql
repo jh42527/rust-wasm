@@ -1,4 +1,6 @@
-CREATE TABLE quote (
+DROP SCHEMA sales CASCADE;
+
+CREATE TABLE sales.orders (
     id SERIAL PRIMARY KEY,
     quote character varying(255) NOT NULL UNIQUE,
     author character varying(255) NOT NULL,
@@ -6,7 +8,7 @@ CREATE TABLE quote (
     updated_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
 
-INSERT INTO quote (id, quote, author) VALUES 
+INSERT INTO orders (id, quote, author) VALUES 
 (1, 'There are only two kinds of languages: the ones people complain about and the ones nobody uses.', 'Bjarne Stroustrup'), 
 (2, 'Any fool can write code that a computer can understand. Good programmers write code that humans can understand.', 'Martin Fowler'), 
 (3, 'First, solve the problem. Then, write the code.', 'John Johnson'), 
