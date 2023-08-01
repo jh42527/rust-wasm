@@ -3,6 +3,10 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
+  "runArgs": ["--platform=linux/amd64" ],
+  "features": {
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+  },
   "customizations": {
     "vscode": {
       "extensions": [
@@ -10,6 +14,5 @@
       ]
     }
   },
-  "runArgs": ["--platform=linux/amd64" ],
   "remoteUser": "root"
 }
