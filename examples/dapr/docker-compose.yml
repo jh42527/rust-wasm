@@ -1,0 +1,46 @@
+version: '3'
+services:
+  ##############################
+  # WASM/WASI app + Dapr sidecar
+  ##############################
+  grayscale-app:
+    platform: wasi/wasm
+    image: rustwasm/image-http-grayscale:latest
+    runtime: io.containerd.wasmedge.v1
+    ports:
+      - "50002:8080"
+    depends_on:
+      - redis
+      - placement
+    networks:
+      - hello-dapr
+  grayscale-app-dapr:
+    image: "daprio/daprd:edge"
+    command: ["./daprd",
+    "-app-id", "grayscale-app",
+    "-app-port", "3000",
+    "-placement-host-address", "placement:50006"]
+    depends_on:
+      - grayscale-app
+    network_mode: "service:grayscale-app"
+  ############################
+  # Dapr placement service
+  ############################
+  placement:
+    image: "daprio/dapr"
+    command: ["./placement", "-port", "50006"]
+    ports:
+      - "50006:50006"
+    networks:
+      - hello-dapr
+  ############################
+  # Redis state store
+  ############################
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6380:6379"
+    networks:
+      - hello-dapr
+networks:
+    hello-dapr:

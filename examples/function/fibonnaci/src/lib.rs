@@ -1,7 +1,5 @@
 extern crate image;
 
-use std::path::Path;
-
 #[no_mangle]
 pub extern "C" fn fibonacci(n: i64) {
     let mut previous: i64 = 0;
