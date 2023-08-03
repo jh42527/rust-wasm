@@ -1,6 +1,6 @@
 {
     "rust-analyzer.linkedProjects": [
-        "examples/function/fibonnaci/Cargo.toml",
-        "examples/http/image-grayscale/Cargo.toml",
+        "examples/functions/fibonnaci/Cargo.toml",
+        "examples/services/image-http-grayscale/Cargo.toml",
     ]
 }
