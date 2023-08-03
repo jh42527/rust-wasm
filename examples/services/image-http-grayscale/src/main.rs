@@ -15,7 +15,7 @@ async fn grayscale(req: Request<Body>) -> Result<Response<Body>, anyhow::Error> 
     match (req.method(), req.uri().path()) {
         // Serve some instructions at /
         (&Method::GET, "/") => Ok(Response::new(Body::from(
-            "Try POSTing data to /grayscale such as: `curl http://localhost:9005/grayscale -X POST --data-binary '@flower.png'`",
+            "Try POSTing data to /grayscale such as: `curl http://localhost/grayscale -X POST --data-binary '@flower.png'`",
         ))),
 
         (&Method::POST, "/grayscale") => {
@@ -78,6 +78,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     if let Err(e) = server.await {
         eprintln!("server error: {}", e);
     }
-    
+
     Ok(())
 }
