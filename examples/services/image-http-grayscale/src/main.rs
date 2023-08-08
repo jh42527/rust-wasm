@@ -19,8 +19,6 @@ async fn grayscale(req: Request<Body>) -> Result<Response<Body>, anyhow::Error> 
             if detected.is_err() {
                 return Ok(Response::new(Body::from("Unknown image format")));
             }
-            
-            let image_format_detected = detected.unwrap();
 
             let mut img = image::load_from_memory(&image_data).unwrap();
 
