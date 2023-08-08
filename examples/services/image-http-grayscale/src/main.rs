@@ -7,10 +7,6 @@ use std::net::SocketAddr;
 use std::result::Result;
 use std::io::Cursor;
 
-use base64::{decode, encode};
-use image::load_from_memory;
-use image::ImageOutputFormat::Png;
-
 async fn grayscale(req: Request<Body>) -> Result<Response<Body>, anyhow::Error> {
     match (req.method(), req.uri().path()) {
         // Serve some instructions at /
@@ -36,9 +32,9 @@ async fn grayscale(req: Request<Body>) -> Result<Response<Body>, anyhow::Error> 
 
             let mut buf: Vec<u8> = Vec::new();
 
-            img.write_to(&mut Cursor::new(&mut buf), Png).unwrap();
+            img.write_to(&mut Cursor::new(&mut buf), image::ImageOutputFormat::Png).unwrap();
 
-            let encoded_img = encode(&buf);
+            let encoded_img = base64::encode(&buf);
 
             let response = Response::builder()
                 .header("Content-Type", "image/png")
